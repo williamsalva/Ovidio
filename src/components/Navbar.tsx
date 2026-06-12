@@ -44,9 +44,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-panel shadow-lg py-3'
+          ? 'bg-white dark:bg-[#070d14] border-b border-card-border shadow-md py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -131,10 +131,18 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-primary dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors"
+              className="p-2 rounded-lg text-primary dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors flex items-center justify-center"
               aria-label="Abrir menú"
             >
-              {isOpen ? <span className="text-2xl select-none">❌</span> : <span className="text-2xl select-none">🍔</span>}
+              {isOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -153,9 +161,12 @@ export default function Navbar() {
             </span>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
+              className="p-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-primary dark:text-slate-300 flex items-center justify-center"
+              aria-label="Cerrar menú"
             >
-              <span className="text-2xl select-none">❌</span>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
 
