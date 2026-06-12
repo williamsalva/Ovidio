@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUIStore } from '@/store/useUIStore';
-import { Heart, Menu, X, Sun, Moon, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -54,13 +53,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-accent-light dark:bg-rose-950/40 text-accent transition-transform duration-300 group-hover:scale-110">
-              <Heart className="w-5 h-5 animate-heartbeat fill-accent" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-accent-light dark:bg-rose-950/40 text-3xl transition-transform duration-300 group-hover:scale-110 shrink-0 select-none animate-heartbeat">
+              ❤️
             </div>
-            <span className="font-semibold text-lg sm:text-xl tracking-tight text-primary dark:text-slate-100">
-              Dr. Ovidio <span className="text-accent font-light">Cortázar</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="font-bold text-base sm:text-lg tracking-tight text-primary dark:text-slate-100 leading-none">
+                Dr. Ovidio <span className="text-accent font-light">Cortázar</span>
+              </span>
+              <span className="text-[9px] uppercase tracking-wider text-muted dark:text-slate-400 font-extrabold leading-none mt-1">
+                Cardiología Pediátrica y Arritmias
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -88,14 +92,10 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-muted transition-colors"
+              className="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-2xl transition-colors"
               aria-label="Cambiar tema"
             >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-amber-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
+              {theme === 'dark' ? '☀️' : '🌙'}
             </button>
 
             {/* Direct WhatsApp Call */}
@@ -103,9 +103,9 @@ export default function Navbar() {
               href="https://wa.me/525529682922"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-1 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:opacity-80 transition-opacity"
+              className="flex items-center space-x-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:opacity-80 transition-opacity"
             >
-              <Phone className="w-4 h-4 fill-emerald-600/20" />
+              <span className="text-lg select-none">📞</span>
               <span>WhatsApp</span>
             </a>
 
@@ -123,14 +123,10 @@ export default function Navbar() {
             {/* Theme Toggle Mobile */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-muted transition-colors hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
+              className="p-2 rounded-full text-2xl transition-colors hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
               aria-label="Cambiar tema"
             >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-amber-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
+              {theme === 'dark' ? '☀️' : '🌙'}
             </button>
 
             <button
@@ -138,7 +134,7 @@ export default function Navbar() {
               className="p-2 rounded-lg text-primary dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors"
               aria-label="Abrir menú"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <span className="text-2xl select-none">❌</span> : <span className="text-2xl select-none">🍔</span>}
             </button>
           </div>
         </div>
@@ -159,7 +155,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="p-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
             >
-              <X className="w-6 h-6" />
+              <span className="text-2xl select-none">❌</span>
             </button>
           </div>
 
@@ -190,7 +186,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 w-full py-3 rounded-xl border border-slate-200 dark:border-slate-800 text-emerald-600 dark:text-emerald-400 font-medium hover:bg-emerald-50 dark:hover:bg-emerald-950/20 transition-colors"
             >
-              <Phone className="w-4 h-4 fill-emerald-600/10" />
+              <span className="text-lg select-none">📞</span>
               <span>WhatsApp</span>
             </a>
 

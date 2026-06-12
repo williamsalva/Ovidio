@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Heart, MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
 import { useUIStore } from '@/store/useUIStore';
 
 export default function Footer() {
@@ -33,8 +32,8 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-accent-light dark:bg-rose-950/40 text-accent">
-                <Heart className="w-4.5 h-4.5 fill-accent" />
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent-light dark:bg-rose-950/40 text-xl select-none">
+                ❤️
               </div>
               <span className="font-semibold text-lg tracking-tight text-primary dark:text-slate-100">
                 Dr. Ovidio <span className="text-accent font-light">Cortázar</span>
@@ -71,11 +70,10 @@ export default function Footer() {
                     href={loc.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1 text-xs text-primary dark:text-slate-300 font-medium hover:underline hover:text-accent dark:hover:text-accent pt-1"
+                    className="inline-flex items-center space-x-1.5 text-xs text-primary dark:text-slate-300 font-medium hover:underline hover:text-accent dark:hover:text-accent pt-1"
                   >
-                    <MapPin className="w-3.5 h-3.5" />
-                    <span>Ver ubicación en mapa</span>
-                    <ExternalLink className="w-2.5 h-2.5" />
+                    <span className="text-base select-none">📍</span>
+                    <span>Ver ubicación en mapa ↗️</span>
                   </a>
                 </div>
               ))}
@@ -95,7 +93,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-sm text-muted hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-emerald-500" />
+                  <span className="text-base select-none">📞</span>
                   <span>+52 55 2968 2922</span>
                 </a>
               </li>
@@ -104,7 +102,7 @@ export default function Footer() {
                   href="mailto:dr.cortazar@kindoc.com.mx"
                   className="flex items-center space-x-2 text-sm text-muted hover:text-accent dark:text-slate-400 dark:hover:text-accent transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-slate-500" />
+                  <span className="text-base select-none">✉️</span>
                   <span>dr.cortazar@kindoc.com.mx</span>
                 </a>
               </li>

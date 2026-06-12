@@ -1,9 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { servicesData } from '@/data/services';
-import { ArrowLeft, Zap, FileCheck } from 'lucide-react';
+
 import ServiceSidebar from './ServiceSidebar';
+
+const getServiceIcon = (slug: string) => {
+  switch (slug) {
+    case 'consulta-alta-especialidad-arritmias-pediatricas':
+      return '👶';
+    case 'segunda-opinion-arritmia-pediatrica':
+      return '🩺';
+    case 'electrocardiograma-pediatrico-cdmx':
+      return '📈';
+    case 'holter-ritmo-ninos':
+      return '⏱️';
+    case 'mesa-inclinada-tilt-test-pediatrico':
+      return '🔄';
+    case 'prueba-esfuerzo-pediatrica-cdmx':
+      return '🏃‍♂️';
+    case 'estudio-electrofisiologico-pediatrico':
+      return '🖥️';
+    case 'ablacion-cateter-ninos-que-esperar':
+      return '⚡';
+    case 'marcapasos-pediatrico-cdmx':
+      return '❤️';
+    case 'desfibrilador-dai-pediatrico-cdmx':
+      return '🛡️';
+    default:
+      return '❤️';
+  }
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -46,7 +74,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           href="/servicios"
           className="inline-flex items-center space-x-1.5 text-sm font-semibold text-accent hover:underline group"
         >
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          <span className="transition-transform group-hover:-translate-x-1 select-none">⬅️</span>
           <span>Regresar a Servicios</span>
         </Link>
       </div>
@@ -56,27 +84,51 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         {/* Main Content Column */}
         <div className="lg:col-span-8 space-y-12">
           {/* Header Card */}
-          <div className="space-y-4">
-            <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full ${
-              service.category === 'procedimiento'
-                ? 'bg-rose-500/10 text-rose-500 dark:bg-rose-950/30'
-                : 'bg-primary/10 text-primary dark:bg-sky-950/30 dark:text-sky-300'
-            }`}>
-              {service.category === 'procedimiento' ? 'Procedimiento Intervencionista' : 'Estudio Diagnóstico'}
-            </span>
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
-              {service.title}
-            </h1>
-            <p className="text-muted dark:text-slate-300 text-base leading-relaxed font-medium">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full ${
+                service.category === 'procedimiento'
+                  ? 'bg-rose-500/10 text-rose-500 dark:bg-rose-950/30'
+                  : 'bg-primary/10 text-primary dark:bg-sky-950/30 dark:text-sky-300'
+              }`}>
+                {service.category === 'procedimiento' ? 'Procedimiento Intervencionista' : 'Estudio Diagnóstico'}
+              </span>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 dark:bg-rose-950/30 text-4xl shrink-0 select-none">
+                {getServiceIcon(slug)}
+              </div>
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
+                {service.title}
+              </h1>
+            </div>
+
+            <p className="text-muted dark:text-slate-300 text-base leading-relaxed font-medium border-l-2 border-accent/25 pl-4">
               {service.heroDesc}
             </p>
           </div>
+
+          {/* Clinical Banner Image */}
+          {service.imageUrl && (
+            <div className="relative w-full h-[250px] sm:h-[380px] rounded-3xl overflow-hidden shadow-lg border border-card-border bg-slate-100 dark:bg-slate-900">
+              <Image
+                src={service.imageUrl}
+                alt={service.title}
+                fill
+                sizes="(max-w-7xl) 100vw, 800px"
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-80" />
+            </div>
+          )}
 
           {/* Cero Fluoroscopy Banner (If procedural) */}
           {service.category === 'procedimiento' && (
             <div className="glass-panel p-6 rounded-2xl border-l-4 border-l-emerald-500 bg-gradient-to-r from-emerald-50/10 to-transparent dark:from-emerald-950/5 space-y-3">
               <div className="flex items-center space-x-2 text-emerald-600 dark:text-emerald-400">
-                <Zap className="w-5 h-5 fill-emerald-600/10" />
+                <span className="text-2xl select-none">⚡</span>
                 <span className="font-extrabold text-sm uppercase tracking-wide">Protocolo Cero Fluoroscopía</span>
               </div>
               <p className="text-xs text-muted dark:text-slate-350 leading-relaxed">
@@ -143,7 +195,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </h2>
               <div className="p-6 rounded-2xl border border-card-border bg-slate-50/50 dark:bg-slate-900/20 space-y-4">
                 <div className="flex items-center space-x-2 text-accent">
-                  <FileCheck className="w-5 h-5" />
+                  <span className="text-2xl select-none">📋</span>
                   <span className="font-bold text-xs uppercase tracking-wider">Instrucciones de Preparación</span>
                 </div>
                 <ul className="space-y-3">

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { useUIStore } from '@/store/useUIStore';
-import { X, Calendar, Clock, MapPin, User, Phone, Mail, FileText, CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function AppointmentModal() {
   const {
@@ -117,9 +116,9 @@ export default function AppointmentModal() {
           </div>
           <button
             onClick={handleClose}
-            className="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-muted transition-colors"
+            className="p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50 text-2xl transition-colors select-none"
           >
-            <X className="w-5 h-5" />
+            ❌
           </button>
         </div>
 
@@ -157,7 +156,7 @@ export default function AppointmentModal() {
                           : 'border-card-border bg-slate-50/50 dark:bg-slate-900/35'
                       }`}
                     >
-                      <MapPin className={`w-5 h-5 mt-0.5 ${isSelected ? 'text-accent' : 'text-muted'}`} />
+                      <span className="text-2xl mt-0.5 select-none shrink-0">📍</span>
                       <div>
                         <h5 className="font-semibold text-sm text-primary dark:text-slate-100">
                           {loc.name}
@@ -182,7 +181,7 @@ export default function AppointmentModal() {
               {/* Date Input */}
               <div className="space-y-2">
                 <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                  <Calendar className="w-3.5 h-3.5" />
+                  <span className="text-base select-none">📅</span>
                   <span>Fecha Solicitada</span>
                 </label>
                 <input
@@ -202,7 +201,7 @@ export default function AppointmentModal() {
               {/* Time Picker */}
               <div className="space-y-2 pt-2">
                 <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                  <Clock className="w-3.5 h-3.5" />
+                  <span className="text-base select-none">⏱️</span>
                   <span>Horario Preferido</span>
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -240,7 +239,7 @@ export default function AppointmentModal() {
               {/* Patient Name */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                  <User className="w-3.5 h-3.5" />
+                  <span className="text-base select-none">👶</span>
                   <span>Nombre Completo del Paciente</span>
                 </label>
                 <input
@@ -278,7 +277,7 @@ export default function AppointmentModal() {
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                    <Phone className="w-3.5 h-3.5" />
+                    <span className="text-base select-none">📞</span>
                     <span>WhatsApp Contacto</span>
                   </label>
                   <input
@@ -299,7 +298,7 @@ export default function AppointmentModal() {
               {/* Email */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                  <Mail className="w-3.5 h-3.5" />
+                  <span className="text-base select-none">✉️</span>
                   <span>Correo Electrónico (Opcional)</span>
                 </label>
                 <input
@@ -319,7 +318,7 @@ export default function AppointmentModal() {
               {/* Comments */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold text-muted dark:text-slate-400 uppercase tracking-wider flex items-center space-x-1">
-                  <FileText className="w-3.5 h-3.5" />
+                  <span className="text-base select-none">📋</span>
                   <span>Síntomas o Comentarios Adicionales</span>
                 </label>
                 <textarea
@@ -335,8 +334,8 @@ export default function AppointmentModal() {
 
           {appointmentData.step === 4 && (
             <div className="text-center py-6 space-y-4 animate-fade-in">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 mb-2">
-                <CheckCircle2 className="w-10 h-10" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-5xl mb-2 select-none animate-float">
+                ✅
               </div>
               <h4 className="text-xl font-bold text-primary dark:text-slate-100">
                 ¡Solicitud Registrada!
@@ -352,7 +351,7 @@ export default function AppointmentModal() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-slate-100 font-medium shadow-md hover:shadow-lg transition-all active:scale-95 duration-150 cursor-pointer"
                 >
-                  <Phone className="w-4 h-4 fill-slate-100/10" />
+                  <span className="text-2xl select-none">💬</span>
                   <span>Confirmar por WhatsApp</span>
                 </a>
               </div>
@@ -378,7 +377,7 @@ export default function AppointmentModal() {
                 onClick={prevStep}
                 className="flex items-center space-x-1.5 px-4 py-2.5 rounded-xl border border-card-border text-sm font-semibold text-primary dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <span className="text-sm select-none">⬅️</span>
                 <span>Atrás</span>
               </button>
             ) : (
@@ -392,7 +391,7 @@ export default function AppointmentModal() {
                 className="flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-accent text-slate-100 text-sm font-semibold shadow-md hover:bg-rose-600 hover:shadow-lg transition-all"
               >
                 <span>Siguiente</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="text-sm select-none">➡️</span>
               </button>
             ) : (
               <button
@@ -401,7 +400,7 @@ export default function AppointmentModal() {
                 className="flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-accent text-slate-100 text-sm font-semibold shadow-md hover:bg-rose-600 hover:shadow-lg transition-all"
               >
                 <span>Enviar Solicitud</span>
-                <CheckCircle2 className="w-4 h-4" />
+                <span className="text-sm select-none">✅</span>
               </button>
             )}
           </div>

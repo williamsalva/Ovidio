@@ -13,6 +13,7 @@ export interface ServiceData {
   indications: string[];
   preparation?: string[];
   safety: string;
+  imageUrl?: string;
 }
 
 export const servicesData: Record<string, ServiceData> = {
@@ -42,7 +43,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Traer una lista con los nombres de medicamentos actuales y dosis.',
       'Registrar previamente la frecuencia y duración de los síntomas que ha presentado su hijo.'
     ],
-    safety: 'La consulta clínica es completamente segura y no invasiva. Es un espacio para resolver todas las dudas de la familia.'
+    safety: 'La consulta clínica es completamente segura y no invasiva. Es un espacio para resolver todas las dudas de la familia.',
+    imageUrl: 'https://framerusercontent.com/images/Hkdp2K950wNWEHvUj7ns7isKjco.jpeg?width=1600&height=1200'
   },
   'segunda-opinion-arritmia-pediatrica': {
     slug: 'segunda-opinion-arritmia-pediatrica',
@@ -69,7 +71,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Es indispensable traer todos los estudios, informes, CD de grabaciones de cateterismos o ecocardiogramas anteriores.',
       'Llevar las recetas médicas con los medicamentos actuales.'
     ],
-    safety: 'Estudio de revisión clínica y análisis de gabinete, completamente seguro, no invasivo y sin compromiso de permanencia.'
+    safety: 'Estudio de revisión clínica y análisis de gabinete, completamente seguro, no invasivo y sin compromiso de permanencia.',
+    imageUrl: 'https://framerusercontent.com/images/cyjZdQOVmBw1hLn2UmvKIV3o.jpg?width=1920&height=1200'
   },
   'electrocardiograma-pediatrico-cdmx': {
     slug: 'electrocardiograma-pediatrico-cdmx',
@@ -97,14 +100,15 @@ export const servicesData: Record<string, ServiceData> = {
       'Es recomendable vestir al niño con ropa cómoda que permita descubrir el pecho con facilidad.',
       'Explicar al niño que es una prueba indolora (no duele y no emite corriente) para que se mantenga tranquilo.'
     ],
-    safety: 'Estudio 100% seguro. No emite radiación, no provoca dolor y no introduce electricidad al cuerpo de su hijo.'
+    safety: 'Estudio 100% seguro. No emite radiación, no provoca dolor y no introduce electricidad al cuerpo de su hijo.',
+    imageUrl: 'https://framerusercontent.com/images/cyjZdQOVmBw1hLn2UmvKIV3o.jpg?width=1920&height=1200'
   },
   'holter-ritmo-ninos': {
     slug: 'holter-ritmo-ninos',
     category: 'diagnostico',
     title: 'Holter de Ritmo en Niños (24 a 168 horas)',
     metaTitle: 'Holter de Ritmo en Niños CDMX | Diagnóstico de Arritmias',
-    metaDesc: 'Holter de ritmo de 24 a 168 horas para diagnóstico de arritmias en niños en CDMX. Interpretación por electrofisiólogo pediátrico. Agenda con el Dr. Cortazar.',
+    metaDesc: 'Holter de ritmo de 24 a 168 horas para diagnóstico de arritmias en niños en CDMX. Referencia del Dr. Cortazar.',
     heroDesc: 'Monitoreo continuo en casa que captura el comportamiento del corazón en su rutina real. Ideal para atrapar arritmias esporádicas.',
     definition: 'Es un dispositivo portátil que registra los latidos del corazón de manera ininterrumpida durante periodos desde 1 día (24h) hasta una semana (168h). El niño realiza sus actividades cotidianas (ir a la escuela, jugar, dormir) mientras el equipo graba el ritmo.',
     purpose: [
@@ -125,7 +129,8 @@ export const servicesData: Record<string, ServiceData> = {
       'No aplicar cremas o lociones en el pecho del niño para garantizar una buena adhesión de los electrodos.',
       'Mantener un diario de síntomas anotando la hora exacta en que el niño refiere molestias.'
     ],
-    safety: 'Estudio no invasivo y completamente seguro. El dispositivo es pequeño, ligero y cómodo de usar.'
+    safety: 'Estudio no invasivo y completamente seguro. El dispositivo es pequeño, ligero y cómodo de usar.',
+    imageUrl: 'https://framerusercontent.com/images/EhFRHV9ww8Z6G9xLt6v8jv1bzA.png?width=2048&height=1365'
   },
   'mesa-inclinada-tilt-test-pediatrico': {
     slug: 'mesa-inclinada-tilt-test-pediatrico',
@@ -152,7 +157,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Asistir con ropa cómoda y de preferencia acompañado por un adulto.',
       'Suspender medicamentos antiarrítmicos o reguladores de presión solo si lo indicó previamente el Dr. Cortázar.'
     ],
-    safety: 'El estudio busca inducir el mareo o desmayo controlado. Si ocurre, la camilla se regresa de inmediato al plano horizontal. Los síntomas desaparecen en segundos y el equipo médico está presente en todo momento.'
+    safety: 'El estudio busca inducir el mareo o desmayo controlado. Si ocurre, la camilla se regresa de inmediato al plano horizontal. Los síntomas desaparecen en segundos y el equipo médico está presente en todo momento.',
+    imageUrl: 'https://framerusercontent.com/images/Hkdp2K950wNWEHvUj7ns7isKjco.jpeg?width=1600&height=1200'
   },
   'prueba-esfuerzo-pediatrica-cdmx': {
     slug: 'prueba-esfuerzo-pediatrica-cdmx',
@@ -180,7 +186,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Evitar alimentos pesados 4 horas antes de la prueba; tomar un refrigerio ligero.',
       'No suspender medicamentos a menos que se le haya indicado específicamente.'
     ],
-    safety: 'El estudio es supervisado directamente por el electrofisiólogo. Si se detecta cualquier anomalía eléctrica significativa o fatiga extrema, la banda se detiene de inmediato de forma controlada.'
+    safety: 'El estudio es supervisado directamente por el electrofisiólogo. Si se detecta cualquier anomalía eléctrica significativa o fatiga extrema, la banda se detiene de inmediato de forma controlada.',
+    imageUrl: 'https://framerusercontent.com/images/EhFRHV9ww8Z6G9xLt6v8jv1bzA.png?width=2048&height=1365'
   },
   'estudio-electrofisiologico-pediatrico': {
     slug: 'estudio-electrofisiologico-pediatrico',
@@ -208,7 +215,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Estudios preoperatorios de sangre (coagulación y biometría) según se le indique en consulta.',
       'Discutir previamente la suspensión de medicamentos antiarrítmicos (usualmente 3 a 5 días antes).'
     ],
-    safety: 'Es un procedimiento altamente seguro cuando lo realiza un electrofisiólogo pediátrico certificado. Al realizarse con Cero Fluoroscopía, se elimina por completo el riesgo biológico derivado de la radiación por rayos X.'
+    safety: 'Es un procedimiento altamente seguro cuando lo realiza un electrofisiólogo pediátrico certificado. Al realizarse con Cero Fluoroscopía, se elimina por completo el riesgo biológico derivado de la radiación por rayos X.',
+    imageUrl: 'https://framerusercontent.com/images/xklo2of0meYCKi2zIB3IBf4xo.png?width=1376&height=768'
   },
   'marcapasos-pediatrico-cdmx': {
     slug: 'marcapasos-pediatrico-cdmx',
@@ -234,7 +242,8 @@ export const servicesData: Record<string, ServiceData> = {
       'Valoración preoperatoria completa y exámenes de laboratorio autorizados.',
       'Ingreso al hospital programado en la fecha acordada.'
     ],
-    safety: 'El implante es un procedimiento establecido y seguro en manos expertas. El marcapasos está protegido bajo la piel. El generador moderno dura entre 7 y 15 años y su cambio posterior es de muy bajo riesgo.'
+    safety: 'El implante es un procedimiento establecido y seguro en manos expertas. El marcapasos está protegido bajo la piel. El generador moderno dura entre 7 y 15 años y su cambio posterior es de muy bajo riesgo.',
+    imageUrl: 'https://framerusercontent.com/images/4Kxi0fzIKEdeuKpX4oQFOa0MQXU.png?width=848&height=704'
   },
   'desfibrilador-dai-pediatrico-cdmx': {
     slug: 'desfibrilador-dai-pediatrico-cdmx',
@@ -252,7 +261,7 @@ export const servicesData: Record<string, ServiceData> = {
     hospitalization: 'Requiere hospitalización en sala de electrofisiología bajo anestesia general, permaneciendo de 1 a 2 días internado para vigilar el correcto posicionamiento.',
     indications: [
       'Sobrevivientes de un paro cardíaco por arritmia grave.',
-      'Síndrome de QT Largo, Brugada o Taquicardia Ventricular Catecolaminérgica con factores de riesgo alto.',
+      'Síndrome de QT Largo, Brugada o Taquicardia Ventricular Categoría 2 o 3 con factores de riesgo alto.',
       'Miocardiopatía hipertrófica o dilatada con función cardíaca muy disminuida.'
     ],
     preparation: [
@@ -260,6 +269,7 @@ export const servicesData: Record<string, ServiceData> = {
       'Pruebas y valoraciones preoperatorias indicadas por el equipo.',
       'Planta de cuidados postquirúrgicos en casa lista.'
     ],
-    safety: 'Procedimiento quirúrgico de alta tecnología y seguridad. Se pueden utilizar desfibriladores subcutáneos (S-ICD) en adolescentes, los cuales no requieren colocar cables dentro del corazón.'
+    safety: 'Procedimiento quirúrgico de alta tecnología y seguridad. Se pueden utilizar desfibriladores subcutáneos (S-ICD) en adolescentes, los cuales no requieren colocar cables dentro del corazón.',
+    imageUrl: 'https://framerusercontent.com/images/4Kxi0fzIKEdeuKpX4oQFOa0MQXU.png?width=848&height=704'
   }
 };

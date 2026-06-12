@@ -1,9 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { blogArticles } from '@/data/blog';
 import ScrollProgress from './ScrollProgress';
-import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+
+const getArticleImage = (slug: string) => {
+  switch (slug) {
+    case 'cero-fluoroscopia-pediatrica-mexico':
+      return '/images/zero_radiation_kids.png';
+    case 'ablacion-cateter-ninos-que-esperar':
+      return '/images/catheter_ablation_guide.png';
+    case 'desmayo-hijo-deporte-corazon':
+      return '/images/child_sports_heart.png';
+    default:
+      return '/images/zero_radiation_kids.png';
+  }
+};
 import ServiceSidebar from '@/app/servicios/[slug]/ServiceSidebar';
 
 interface PageProps {
@@ -50,7 +63,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
           href="/blog"
           className="inline-flex items-center space-x-1.5 text-sm font-semibold text-accent hover:underline group"
         >
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+          <span className="transition-transform group-hover:-translate-x-1 select-none">⬅️</span>
           <span>Regresar al Blog</span>
         </Link>
       </div>
@@ -76,25 +89,37 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               {article.title}
             </h1>
 
-            {/* Author / Date / Read Time */}
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted dark:text-slate-400">
               <span className="flex items-center space-x-1.5">
-                <User className="w-4 h-4 text-accent" />
+                <span className="select-none text-base">👤</span>
                 <span>Por {article.author}</span>
               </span>
               <span className="flex items-center space-x-1.5">
-                <Calendar className="w-4 h-4 text-accent" />
+                <span className="select-none text-base">📅</span>
                 <span>{article.date}</span>
               </span>
               <span className="flex items-center space-x-1.5">
-                <Clock className="w-4 h-4 text-accent" />
+                <span className="select-none text-base">⏱️</span>
                 <span>{article.readTime}</span>
               </span>
             </div>
           </div>
 
+          {/* Article Hero Banner Image */}
+          <div className="relative w-full h-[250px] sm:h-[380px] rounded-2xl overflow-hidden shadow-lg border border-card-border bg-slate-100 dark:bg-slate-900">
+            <Image
+              src={getArticleImage(slug)}
+              alt={article.title}
+              fill
+              sizes="(max-w-7xl) 100vw, 800px"
+              priority
+              className="object-cover animate-fade-in"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-85" />
+          </div>
+
           {/* Article Content Render */}
-          <div className="space-y-6 text-sm sm:text-base text-muted dark:text-slate-350 leading-relaxed">
+          <div className="space-y-6 text-sm sm:text-base text-muted dark:text-slate-350 leading-relaxed pt-2">
             {article.content.map((block, idx) => {
               if (block.type === 'p') {
                 return <p key={idx}>{block.text}</p>;
