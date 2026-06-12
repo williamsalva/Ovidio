@@ -206,6 +206,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 2.5. Organizations Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="font-extrabold text-xs text-accent uppercase tracking-wider">Acreditación y Respaldo</span>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-slate-100">
+            Sociedades y Organizaciones Médicas
+          </h3>
+          <p className="text-xs sm:text-sm text-muted dark:text-slate-400">
+            El Dr. Ovidio Cortázar es miembro activo y certificado por las asociaciones líderes en pediatría, cardiología y electrofisiología a nivel nacional e internacional.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center max-w-4xl mx-auto">
+          {/* Logo Card 1 */}
+          <div className="glass-panel p-6 rounded-3xl border border-card-border bg-white/50 dark:bg-slate-900/20 flex items-center justify-center shadow-md">
+            <div className="relative w-full aspect-[1236/984] max-h-[220px]">
+              <Image
+                src="https://framerusercontent.com/images/yBXudht6wID9bmz6I8JBiFdFM0.jpg?scale-down-to=512&width=1236&height=984"
+                alt="Sociedades Médicas y Certificaciones del Dr. Ovidio Cortázar"
+                fill
+                className="object-contain dark:brightness-95"
+                sizes="(max-w-md) 100vw, 400px"
+              />
+            </div>
+          </div>
+
+          {/* Logo Card 2 */}
+          <div className="glass-panel p-6 rounded-3xl border border-card-border bg-white/50 dark:bg-slate-900/20 flex items-center justify-center shadow-md">
+            <div className="relative w-full aspect-[1366/768] max-h-[220px]">
+              <Image
+                src="https://framerusercontent.com/images/M8XTqhZ9GnOYR61lZERS5ax48sM.png?scale-down-to=512&width=1366&height=768"
+                alt="Organizaciones y Hospitales de Adscripción del Dr. Ovidio Cortázar"
+                fill
+                className="object-contain dark:brightness-95"
+                sizes="(max-w-md) 100vw, 400px"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Credentials & Certifications */}
       <section className="bg-slate-100/60 dark:bg-slate-900/30 py-16 border-y border-slate-200/50 dark:border-slate-800/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
