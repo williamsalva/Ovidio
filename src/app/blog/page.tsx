@@ -23,7 +23,7 @@ export default function BlogHubPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       {/* Header section */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <h1 className="text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
           Blog de Electrofisiología Pediátrica
         </h1>
         <p className="text-muted dark:text-slate-350 text-sm sm:text-base leading-relaxed">

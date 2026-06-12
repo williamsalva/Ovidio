@@ -64,7 +64,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             }`}>
               {service.category === 'procedimiento' ? 'Procedimiento Intervencionista' : 'Estudio Diagnóstico'}
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
               {service.title}
             </h1>
             <p className="text-muted dark:text-slate-300 text-base leading-relaxed font-medium">

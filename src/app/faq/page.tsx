@@ -103,7 +103,7 @@ export default function FAQPage() {
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 dark:bg-rose-950/40 text-accent">
           <HelpCircle className="w-6 h-6" />
         </div>
-        <h1 className="text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-primary dark:text-slate-100 tracking-tight">
           Preguntas Frecuentes
         </h1>
         <p className="text-muted dark:text-slate-350 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">

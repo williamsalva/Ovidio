@@ -95,7 +95,7 @@ export default function HomePage() {
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Líder en Cero Fluoroscopía Pediátrica</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-slate-100 tracking-tight leading-tight">
                 El corazón de tu hijo <br />
                 <span className="text-accent">merece al especialista.</span>
               </h1>
@@ -185,7 +185,7 @@ export default function HomePage() {
               <Activity className="w-5 h-5 animate-pulse" />
               <span className="font-bold text-sm uppercase tracking-wider">Sobre el Doctor</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-primary dark:text-slate-100">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-primary dark:text-slate-100">
               El corazón de un niño no es el de un adulto en miniatura.
             </h2>
             <div className="text-muted dark:text-slate-300 space-y-4 leading-relaxed">
@@ -210,7 +210,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="font-extrabold text-xs text-accent uppercase tracking-wider">Acreditación y Respaldo</span>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-slate-100">
+          <h3 className="text-xl sm:text-3xl font-extrabold text-primary dark:text-slate-100">
             Sociedades y Organizaciones Médicas
           </h3>
           <p className="text-xs sm:text-sm text-muted dark:text-slate-400">
@@ -320,7 +320,7 @@ export default function HomePage() {
                 <Video className="w-5 h-5" />
                 <span className="font-bold text-sm uppercase tracking-wider">Mapeo Tridimensional</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-slate-100">
+              <h3 className="text-xl sm:text-3xl font-extrabold text-primary dark:text-slate-100">
                 Así se ve curar una arritmia desde adentro.
               </h3>
               <p className="text-sm text-muted dark:text-slate-300 leading-relaxed">
@@ -362,7 +362,7 @@ export default function HomePage() {
           <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 dark:bg-rose-950/40 text-accent">
             <MapPin className="w-5 h-5" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary dark:text-slate-100">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-primary dark:text-slate-100">
             Ubicaciones de Consulta en CDMX
           </h2>
           <p className="text-sm sm:text-base text-muted dark:text-slate-300">
@@ -413,7 +413,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="glass-panel p-8 md:p-10 rounded-3xl border border-card-border space-y-8">
             <div className="text-center space-y-2">
-              <h3 className="text-2xl font-extrabold text-primary dark:text-slate-100">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-primary dark:text-slate-100">
                 Escríbanos directamente
               </h3>
               <p className="text-xs text-muted dark:text-slate-400">
